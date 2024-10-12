@@ -1,14 +1,14 @@
 ﻿// Créer une classe "personne" implémentant : Les propriétés publiques - String firstname, string lastname, datetime birthdate
 
 class Personne {
-    public string firstName;
-    public string lastName;
-    private string birthdate;
+    public string FirstName;
+    public string LastName;
+    private DateTime Birthdate;
 
-    public Personne(string firstName, string lastName, string birthdate) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthdate = birthdate;
+    public Personne(string firstName, string lastName, DateTime birthdate) {
+        this.FirstName = firstName;
+        this.LastName = lastName;
+        this.Birthdate = birthdate;
     }
 }
 
@@ -34,7 +34,28 @@ class CurrentAccount {
         this.CreditLine = creditLine;
         this.personne = personne; 
     }
+    
+    public void withdraw() {
+        Console.Write("Combien souhaitez-vous retirer ? : ");
+        var wdraw = Console.ReadLine();
+        
+        if(Convert.ToDouble(wdraw) < Balance) {
+            Balance -= Convert.ToDouble(wdraw);
+        }
+        else
+        Console.WriteLine("Erreur ! Solde insuffisant");
+    }
 
-    
-    
+    public void deposit() {
+        Console.Write("");
+    }
 }
+
+// Créer une classe "Bank" pour gérer les comptes de la banque implémentant : 
+    //Les propriétés
+        // Dictionary<string, 
+        // Current> Accounts (lecture seule), 
+        // string Name
+    // Les méthodes :
+        // void AddAccount(Current account),
+        // void DeleteAccount(String number)
